@@ -179,11 +179,15 @@
 	};
 
 	uart3_pins_a: uart3_pins@0 {  /* For EVB1 board */
-		pins = "PD10", "PD11";
+		pins = "PB6", "PB7";
 		function = "uart3";
-		muxsel = <5>;
+		muxsel = <7>;
 		drive-strength = <10>;
 		bias-pull-up;
+	};
+	uart3_pins_b: uart3_pins@1 {  /* For EVB1 board */
+		pins = "PB6", "PB7";
+		function = "gpio_in";
 	};
 
 	twi0_pins_a: twi0@0 {
@@ -455,7 +459,7 @@
 	pinctrl-names = "default", "sleep";
 	pinctrl-0 = <&uart0_pins_a>;
 	pinctrl-1 = <&uart0_pins_b>;
-	status = "okay";
+	status = "disabled";
 };
 
 &uart1 {
@@ -473,11 +477,11 @@
 };
 
 &uart3 {
-	compatible = "allwinner,sun20iw1-dsp-uart";
+	/*compatible = "allwinner,sun20iw1-dsp-uart";*/
 	pinctrl-names = "default", "sleep";
 	pinctrl-0 = <&uart3_pins_a>;
-	pinctrl-1 = <&uart3_pins_a>;
-	status = "disabled";
+	pinctrl-1 = <&uart3_pins_b>;
+	status = "okay";
 };
 
 &soc {
@@ -522,7 +526,7 @@
 		power_en;
 		pinctrl-0 = <&wlan_pins_a>;
 		pinctrl-names = "default";
-		status        = "okay";
+		status        = "disabled";
 
 		wlan: wlan@0 {
 			compatible    = "allwinner,sunxi-wlan";
@@ -593,7 +597,7 @@
 
 &sdc0 {
 	bus-width = <4>;
-	cd-gpios = <&pio PF 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+	/*cd-gpios = <&pio PF 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;*/
 	/*non-removable;*/
 	/*broken-cd;*/
 	/*cd-inverted;*/
@@ -635,7 +639,7 @@
 	ignore-pm-notify;
 	max-frequency = <150000000>;
 	ctl-spec-caps = <0x8>;
-	status = "okay";
+	status = "disabled";
 };
 
 
@@ -947,7 +951,7 @@ tvd_row*tvd_column is the total tvd channel number to be used in multichannel mo
 	pinctrl-names = "default", "sleep";
 	dmas = <&dma 45>, <&dma 45>;
 	dma-names = "tx", "rx";
-	status = "okay";
+	status = "disabled";
 
 	/* pcf8574-usage:
 	 * only use gpio0~7, 0 means PP0.
@@ -1005,7 +1009,7 @@ tvd_row*tvd_column is the total tvd channel number to be used in multichannel mo
 	pinctrl-0 = <&gmac_pins_a>;
 	pinctrl-1 = <&gmac_pins_b>;
 	pinctrl-names = "default", "sleep";
-	phy-rst = <&pio PE 16 GPIO_ACTIVE_HIGH>;
+	/*phy-rst = <&pio PE 16 GPIO_ACTIVE_HIGH>;*/
 	tx-delay = <3>; /*2~4*/
 	rx-delay = <0>;
 	status = "disabled";

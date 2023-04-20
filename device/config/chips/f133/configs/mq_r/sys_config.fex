@@ -54,7 +54,7 @@ card_no = 0
 ;sdc_d2			-sdc卡数据2线信号的GPIO配置  |
 ;----------------------------------------------------------------------------------
 [card0_boot_para]
-card_ctrl       = 0
+card_ctrl       = 2
 card_high_speed = 1
 card_line       = 4
 sdc_d1          = port:PF0<2><1><2><default>
@@ -194,13 +194,13 @@ twi_sda  = port:PG15<3><1><default><default>
 ;uart_debug_rx  |Boot串口接收的GPIO配置     |
 ;----------------------------------------------------------------------------------
 [uart_para]
-uart_debug_port = 0
-uart_debug_tx   = port:PE02<6><1><default><default>
-uart_debug_rx   = port:PE03<6><1><default><default>
+;uart_debug_port = 0
+;uart_debug_tx   = port:PE02<6><1><default><default>
+;uart_debug_rx   = port:PE03<6><1><default><default>
 
-;uart_debug_port = 3
-;uart_debug_tx   = port:PB06<7><1><default><default>
-;uart_debug_rx   = port:PB07<7><1><default><default>
+uart_debug_port = 3
+uart_debug_tx   = port:PB06<7><1><default><default>
+uart_debug_rx   = port:PB07<7><1><default><default>
 
 
 ;----------------------------------------------------------------------------------
