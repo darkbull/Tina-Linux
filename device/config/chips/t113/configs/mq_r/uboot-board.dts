@@ -340,28 +340,28 @@
 
 	lcd_driver_name     = "default_lcd";
 	lcd_if              = <0>;
-	lcd_x               = <800>;
-	lcd_y               = <480>;
-	lcd_width           = <150>;
-	lcd_height          = <94>;
-	lcd_dclk_freq       = <48>;
+	lcd_x               = <1024>;
+	lcd_y               = <600>;
+	lcd_width           = <154>;
+	lcd_height          = <86>;
+	lcd_dclk_freq       = <51>;
 
 	lcd_pwm_used        = <1>;
 	lcd_pwm_ch          = <7>;
 	lcd_pwm_freq        = <10000>;
-	lcd_pwm_pol         = <1>;
+	lcd_pwm_pol         = <0>;
 
-	lcd_hbp             = <55>;
-	lcd_ht              = <1240>;
-	lcd_hspw            = <20>;
-	lcd_vbp             = <35>;
-	lcd_vt              = <650>;
-	lcd_vspw            = <10>;
+	lcd_hbp             = <20>;
+	lcd_ht              = <1344>;
+	lcd_hspw            = <10>;
+	lcd_vbp             = <10>;
+	lcd_vt              = <635>;
+	lcd_vspw            = <5>;
 
 	lcd_lvds_if         = <0>;
 	lcd_lvds_colordepth = <1>;
 	lcd_lvds_mode       = <0>;
-	lcd_frm             = <0>;
+	lcd_frm             = <1>;
 	lcd_io_phase        = <0x0000>;
 	lcd_gamma_en        = <0>;
 	lcd_bright_curve_en = <0>;

@@ -166,11 +166,15 @@
 	};
 
 	uart3_pins_a: uart3_pins@0 {  /* For EVB1 board */
-		pins = "PD10", "PD11";
+		pins = "PB6", "PB7";
 		function = "uart3";
-		muxsel = <5>;
+		muxsel = <7>;
 		drive-strength = <10>;
 		bias-pull-up;
+	};
+	uart3_pins_b: uart3_pins@1 {  /* For EVB1 board */
+		pins = "PB6", "PB7";
+		function = "gpio_in";
 	};
 
 	twi0_pins_a: twi0@0 {
@@ -442,7 +446,7 @@
 	pinctrl-names = "default", "sleep";
 	pinctrl-0 = <&uart0_pins_a>;
 	pinctrl-1 = <&uart0_pins_b>;
-	status = "okay";
+	status = "disabled";
 };
 
 &uart1 {
@@ -460,11 +464,11 @@
 };
 
 &uart3 {
-	compatible = "allwinner,sun20iw1-dsp-uart";
+	/*compatible = "allwinner,sun20iw1-dsp-uart";*/
 	pinctrl-names = "default", "sleep";
 	pinctrl-0 = <&uart3_pins_a>;
-	pinctrl-1 = <&uart3_pins_a>;
-	status = "disabled";
+	pinctrl-1 = <&uart3_pins_b>;
+	status = "okay";
 };
 
 &soc {
@@ -509,7 +513,7 @@
 		power_en;
 		pinctrl-0 = <&wlan_pins_a>;
 		pinctrl-names = "default";
-		status        = "okay";
+		status        = "disabled";
 
 		wlan: wlan@0 {
 			compatible    = "allwinner,sunxi-wlan";
@@ -580,13 +584,13 @@
 
 &sdc0 {
 	bus-width = <4>;
-	cd-gpios = <&pio PF 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; /* mangopi */
+	/*cd-gpios = <&pio PF 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;*/ /* mangopi */
 	/*non-removable;*/
 	/*broken-cd;*/
 	/*cd-inverted;*/
 	/*data3-detect;*/
 	/*card-pwr-gpios = <&pio PH 14 1 1 2 0xffffffff>;*/
-	/*cd-used-24M;*/
+	cd-used-24M;
 	cap-sd-highspeed;
 	/*sd-uhs-sdr50;*/
 	/*sd-uhs-ddr50;*/
@@ -622,7 +626,7 @@
 	ignore-pm-notify;
 	max-frequency = <150000000>;
 	ctl-spec-caps = <0x8>;
-	status = "okay";
+	status = "disabled";
 };
 
 
@@ -721,17 +725,17 @@ tvd_row*tvd_column is the total tvd channel number to be used in multichannel mo
 	/* regulator about */
 	/* avcc-supply	= <&reg_aldo1>; */
 	/* hpvcc-supply	= <&reg_eldo1>; */
-	status = "okay";
+	status = "disabled";
 };
 
 &sndcodec {
 	hp_detect_case	= <0x00>;
 	jack_enable	= <0x01>;
-	status = "okay";
+	status = "disabled";
 };
 
 &dummy_cpudai {
-	status = "okay";
+	status = "disabled";
 };
 
 &dmic {
@@ -742,11 +746,11 @@ tvd_row*tvd_column is the total tvd channel number to be used in multichannel mo
 };
 
 &dmic_codec {
-	status = "okay";
+	status = "disabled";
 };
 
 &sounddmic {
-	status = "okay";
+	status = "disabled";
 };
 
 /*-----------------------------------------------------------------------------
@@ -932,7 +936,7 @@ tvd_row*tvd_column is the total tvd channel number to be used in multichannel mo
 	pinctrl-names = "default", "sleep";
 	dmas = <&dma 45>, <&dma 45>;
 	dma-names = "tx", "rx";
-	status = "okay";
+	status = "disabled";
 
 	/* pcf8574-usage:
 	 * only use gpio0~7, 0 means PP0.
@@ -1129,8 +1133,8 @@ chn_cfg_mode     : Hardware DE channel allocation config. 0:single display with 
 	degree0					 = <0>;
 	fb0_format               = <0>;
 	fb0_buffer_num           = <1>;	
-	/*fb0_width                = <800>;*/
-	/*fb0_height               = <480>;*/  /*read from lcd*/
+	fb0_width                = <1024>;
+	fb0_height               = <600>;
 	fb1_format               = <0>;
 	fb1_width                = <0>;
 	fb1_height               = <0>;
@@ -1264,28 +1268,28 @@ pull up or pull down(default 0), driver level(default 1), data>
 	lcd_backlight       = <50>;
 	lcd_if              = <0>;
 
-	lcd_x               = <800>;
-	lcd_y               = <480>;
-	lcd_width           = <150>;
-	lcd_height          = <94>;
-	lcd_dclk_freq       = <48>;
+	lcd_x               = <1024>;
+	lcd_y               = <600>;
+	lcd_width           = <154>;
+	lcd_height          = <86>;
+	lcd_dclk_freq       = <51>;
 
 	lcd_pwm_used        = <1>;
 	lcd_pwm_ch          = <7>;
-	lcd_pwm_freq        = <500>;
+	lcd_pwm_freq        = <10000>;
 	lcd_pwm_pol         = <0>;
 
-	lcd_hbp             = <55>;
-	lcd_ht              = <1240>;
-	lcd_hspw            = <20>;
-	lcd_vbp             = <35>;
-	lcd_vt              = <650>;
-	lcd_vspw            = <10>;
+	lcd_hbp             = <20>;
+	lcd_ht              = <1344>;
+	lcd_hspw            = <10>;
+	lcd_vbp             = <10>;
+	lcd_vt              = <635>;
+	lcd_vspw            = <5>;
 
 	lcd_lvds_if         = <0>;
 	lcd_lvds_colordepth = <1>;
 	lcd_lvds_mode       = <0>;
-	lcd_frm             = <0>;
+	lcd_frm             = <1>;
 	lcd_io_phase        = <0x0000>;
 	lcd_gamma_en        = <0>;
 	lcd_bright_curve_en = <0>;
@@ -1297,95 +1301,7 @@ pull up or pull down(default 0), driver level(default 1), data>
 
 	pinctrl-0 = <&rgb18_pins_a>;
 	pinctrl-1 = <&rgb18_pins_b>;
-/*
-	lcd_driver_name     = "default_lcd";
-	lcd_backlight       = <150>;
-	lcd_if              = <3>;
 
-	lcd_x               = <1280>;
-	lcd_y               = <800>;
-	lcd_width           = <150>;
-	lcd_height          = <94>;
-	lcd_dclk_freq       = <71>;
-	lcd_rb_swap			= <0>;
-	
-	lcd_pwm_used        = <1>;
-	lcd_pwm_ch          = <7>;
-	lcd_pwm_freq        = <50000>;
-	lcd_pwm_pol         = <1>;
-	lcd_pwm_max_limit   = <255>;
-
-	lcd_hbp             = <20>;
-	lcd_ht              = <1418>;
-	lcd_hspw            = <10>;
-	lcd_vbp             = <10>;
-	lcd_vt              = <814>;
-	lcd_vspw            = <5>;
-
-	lcd_lvds_if         = <0>;
-	lcd_lvds_colordepth = <1>;
-	lcd_lvds_mode       = <0>;
-	lcd_frm             = <1>;
-	lcd_io_phase        = <0x0000>;
-	lcd_hv_clk_phase	= <0>;
-	lcd_hv_sync_polarity = <0>;
-	lcd_gamma_en        = <0>;
-	lcd_bright_curve_en = <0>;
-	lcd_cmap_en         = <0>;
-	lcd_fsync_act_time  = <1000>;
-	lcd_fsync_dis_time  = <1000>;
-	
-	deu_mode            = <0>;
-	lcdgamma4iep        = <22>;
-	smart_color         = <90>;
-
-	pinctrl-0 = <&lvds0_pins_a>;
-	pinctrl-1 = <&lvds0_pins_b>;
-	lcd_bl_en = <&pio PD 20 GPIO_ACTIVE_HIGH>;	
-
-	lcd_driver_name     = "he0801a068";
-	lcd_backlight       = <50>;
-	lcd_if              = <4>;
-
-	lcd_x               = <800>;
-	lcd_y               = <1280>;
-	lcd_width           = <52>;
-	lcd_height          = <52>;
-	lcd_dclk_freq       = <78>;
-
-	lcd_pwm_used        = <1>;
-	lcd_pwm_ch          = <7>;
-	lcd_pwm_freq        = <50000>;
-	lcd_pwm_pol         = <1>;
-	lcd_pwm_max_limit   = <255>;
-
-	lcd_hbp             = <149>;
-	lcd_ht              = <978>;
-	lcd_hspw            = <16>;
-	lcd_vbp             = <7>;
-	lcd_vt              = <1329>;
-	lcd_vspw            = <5>;
-
-	lcd_dsi_lane        = <4>;
-	lcd_lvds_if         = <0>;
-	lcd_lvds_colordepth = <1>;
-	lcd_lvds_mode       = <0>;
-	lcd_frm             = <0>;
-	lcd_io_phase        = <0x0000>;
-	lcd_gamma_en        = <0>;
-	lcd_bright_curve_en = <0>;
-	lcd_cmap_en         = <0>;
-	lcd_fsync_act_time  = <1000>;
-	lcd_fsync_dis_time  = <1000>;
-	
-	deu_mode            = <0>;
-	lcdgamma4iep        = <22>;
-	smart_color         = <90>;
-
-	pinctrl-0 = <&dsi4lane_pins_a>;
-	pinctrl-1 = <&dsi4lane_pins_b>;
-	lcd_gpio_0 = <&pio PD 20 GPIO_ACTIVE_HIGH>;	
-*/
 };
 
 &pwm0 {
