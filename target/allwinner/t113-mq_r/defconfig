@@ -4862,8 +4862,8 @@ CONFIG_PACKAGE_brcm_patchram_plus=y
 # CONFIG_PACKAGE_gpio_ir_test is not set
 # CONFIG_PACKAGE_gpioctl-sysfs is not set
 # CONFIG_PACKAGE_htop is not set
-# CONFIG_PACKAGE_hwclock is not set
-# CONFIG_PACKAGE_i2c-tools is not set
+CONFIG_PACKAGE_hwclock=y
+CONFIG_PACKAGE_i2c-tools=y
 # CONFIG_PACKAGE_iconv is not set
 # CONFIG_PACKAGE_iozone3 is not set
 # CONFIG_PACKAGE_iwcap is not set
