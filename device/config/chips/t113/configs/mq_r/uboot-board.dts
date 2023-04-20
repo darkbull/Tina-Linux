@@ -319,8 +319,8 @@
 	def_output_dev           = <0>;
 
 	fb0_format               = <0>;
-	fb0_width                = <800>;
-	fb0_height               = <480>;
+	fb0_width                = <1024>;
+	fb0_height               = <600>;
 
 	fb1_format               = <0>;
 	fb1_width                = <0>;
@@ -335,6 +335,8 @@
 	/*VCC-PD*/
 /*	dcdc1-supply = <&reg_dcdc1>;*/
 };
+
+
 &lcd0 {
 	lcd_used            = <1>;
 
@@ -344,13 +346,15 @@
 	lcd_y               = <600>;
 	lcd_width           = <154>;
 	lcd_height          = <86>;
-	lcd_dclk_freq       = <51>;
 
 	lcd_pwm_used        = <1>;
 	lcd_pwm_ch          = <7>;
-	lcd_pwm_freq        = <10000>;
+	lcd_pwm_freq        = <2000>;
 	lcd_pwm_pol         = <0>;
+	lcd_bl_en 			= <&pio PG 9 GPIO_ACTIVE_HIGH>;
+	lcd_backlight       = <50>;
 
+	lcd_dclk_freq       = <51>;
 	lcd_hbp             = <20>;
 	lcd_ht              = <1344>;
 	lcd_hspw            = <10>;
