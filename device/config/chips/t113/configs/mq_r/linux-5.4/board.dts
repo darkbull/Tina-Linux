@@ -554,14 +554,14 @@
 		power_en;
 		pinctrl-0 = <&wlan_pins_a>;
 		pinctrl-names = "default";
-		status        = "disabled";
+		status        = "okay";
 
 		wlan: wlan@0 {
 			compatible    = "allwinner,sunxi-wlan";
 			clock-names = "32k-fanout1";
 			clocks = <&ccu CLK_FANOUT1_OUT>;
 			wlan_busnum    = <0x1>;
-			wlan_regon    = <&pio PG 12 GPIO_ACTIVE_HIGH>;
+			wlan_regon    = <&pio PG 15 GPIO_ACTIVE_HIGH>;
 			wlan_hostwake  = <&pio PG 10 GPIO_ACTIVE_HIGH>;
 			/*wlan_power    = "VCC-3V3";*/
 			/*wlan_power_vol = <3300000>;*/
@@ -667,7 +667,7 @@
 	ignore-pm-notify;
 	max-frequency = <150000000>;
 	ctl-spec-caps = <0x8>;
-	status = "disabled";
+	status = "okay";
 };
 
 
