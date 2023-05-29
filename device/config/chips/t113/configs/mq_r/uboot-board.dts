@@ -284,7 +284,7 @@
 		reg = <0x0>;
 		spi-rx-bus-width=<0x01>;
 		spi-tx-bus-width=<0x01>;
-		status="disabled";
+		status="okay";
 	};
 };
 
