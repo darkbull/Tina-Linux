@@ -1288,11 +1288,11 @@ pull up or pull down(default 0), driver level(default 1), data>
 
 	/* part 4 */
 	lcd_pwm_used        = <1>;
-	lcd_pwm_ch          = <1>;	/* PD17, PWM1 */
+	lcd_pwm_ch          = <1>;      /* PD17, PWM1 */
 	lcd_pwm_freq        = <200>;
-	lcd_pwm_max_limit   = <255>;	/* Max highlight */
-	lcd_pwm_pol         = <0>;	/* 0: active high; 1: active low */
-	lcd_bl_en 	    = <&pio PD 20 GPIO_ACTIVE_HIGH>;		/* SCREEN_RESET */
+	lcd_pwm_max_limit   = <255>;    /* Max highlight */
+	lcd_pwm_pol         = <0>;      /* 0: active high; 1: active low */
+	lcd_bl_en 	    = <&pio PD 20 GPIO_ACTIVE_HIGH>;    /* SCREEN_RESET */
 	lcd_backlight       = <50>;
 	lcd_bright_curve_en = <0>;
 
@@ -1321,8 +1321,8 @@ pull up or pull down(default 0), driver level(default 1), data>
 
 &pwm1 {
 	pinctrl-names = "active", "sleep";
-	pinctrl-0 = <&pwm0_pin_a>;
-	pinctrl-1 = <&pwm0_pin_b>;
+	pinctrl-0 = <&pwm1_pin_a>;
+	pinctrl-1 = <&pwm1_pin_b>;
 	status = "okay";
 };
 
