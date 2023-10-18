@@ -319,8 +319,8 @@
 	def_output_dev           = <0>;
 
 	fb0_format               = <0>;
-	fb0_width                = <1024>;
-	fb0_height               = <600>;
+	fb0_width                = <800>;
+	fb0_height               = <1280>;
 
 	fb1_format               = <0>;
 	fb1_width                = <0>;
