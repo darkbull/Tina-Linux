@@ -559,8 +559,8 @@
 
 		wlan: wlan@0 {
 			compatible    = "allwinner,sunxi-wlan";
-			clock-names = "32k-fanout1";
-			clocks = <&ccu CLK_FANOUT1_OUT>;
+			/*clock-names = "32k-fanout1";
+			clocks = <&ccu CLK_FANOUT1_OUT>;*/
 			wlan_busnum    = <0x1>;
 			wlan_regon    = <&pio PG 9 GPIO_ACTIVE_HIGH>;
 			wlan_hostwake  = <&pio PG 8 GPIO_ACTIVE_HIGH>;
@@ -1179,12 +1179,12 @@ chn_cfg_mode     : Hardware DE channel allocation config. 0:single display with 
 	dev1_do_hpd              = <1>;
 
 	def_output_dev           = <0>;
-	disp_rotation_used		 = <1>;
-	degree0					 = <0>;
+	disp_rotation_used	 = <1>;
+	degree0			 = <1>;
 	fb0_format               = <0>;
 	fb0_buffer_num           = <1>;	
-	fb0_width                = <800>;
-	fb0_height               = <1280>;
+	fb0_width                = <1280>;
+	fb0_height               = <800>;
 	fb1_format               = <0>;
 	fb1_width                = <0>;
 	fb1_height               = <0>;
