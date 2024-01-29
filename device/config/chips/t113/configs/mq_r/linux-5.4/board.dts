@@ -621,7 +621,7 @@
 	/*vqmmc-supply = <&reg_aldo1>;*/
 	/*emmc io vol 1.8v*/
 	/*vqmmc-supply = <&reg_eldo1>;*/
-	status = "disabled";
+	status = "okay";
 };
 
 &sdc0 {
@@ -1059,7 +1059,7 @@ tvd_row*tvd_column is the total tvd channel number to be used in multichannel mo
 	spi_slave_mode = <0>;
 	spi0_cs_number = <1>;
     	spi0_cs_bitmap = <1>;
-	status = "okay";
+	status = "disabled";
 
 	spi-nand@0 {
 		compatible = "spi-nand";

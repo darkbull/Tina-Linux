@@ -33,7 +33,7 @@ debug_mode  = 1
 ;storage_type   = boot medium, 0-nand, 1-sd, 2-emmc, 3-nor, 4-emmc3, 5-spinand -1(defualt)auto scan
 ;----------------------------------------------------------------------------------
 [target]
-storage_type    = 5
+storage_type    = 2
 burn_key        = 0
 ;----------------------------------------------------------------------------------
 ;spinor configuration
