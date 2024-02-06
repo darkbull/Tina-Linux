@@ -35,32 +35,32 @@ size = 252
 
 [partition]
     name         = boot-resource
-    size         = 504
+    size         = 32768
     downloadfile = "boot-resource.fex"
     user_type    = 0x8000
 
 
 [partition]
     name         = env
-    size         = 504
+    size         = 32768
     downloadfile = "env.fex"
     user_type    = 0x8000
 
 [partition]
     name         = env-redund
-    size         = 504
+    size         = 32768
     downloadfile = "env.fex"
     user_type    = 0x8000
 
 [partition]
     name         = boot
-    size         = 12800
+    size         = 32768
     downloadfile = "boot.fex"
     user_type    = 0x8000
 
 [partition]
     name         = rootfs
-    size         = 61440
+    size         = 65536
     downloadfile = "rootfs.fex"
     user_type    = 0x8000
 
@@ -78,12 +78,12 @@ size = 252
 
 [partition]
     name         = private
-    size         = 10240
+    size         = 32768
     user_type    = 0x8000
 
 [partition]
     name         = rootfs_data
-    size         = 50400
+    size         = 327680
     user_type    = 0x8000
 
 [partition]

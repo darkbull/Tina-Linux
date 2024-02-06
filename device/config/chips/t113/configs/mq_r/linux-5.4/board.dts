@@ -1179,12 +1179,14 @@ chn_cfg_mode     : Hardware DE channel allocation config. 0:single display with 
 	dev1_do_hpd              = <1>;
 
 	def_output_dev           = <0>;
+	/*
 	disp_rotation_used	 = <1>;
 	degree0			 = <1>;
+	*/
 	fb0_format               = <0>;
 	fb0_buffer_num           = <1>;	
-	fb0_width                = <1280>;
-	fb0_height               = <800>;
+	fb0_width                = <800>;
+	fb0_height               = <1280>;
 	fb1_format               = <0>;
 	fb1_width                = <0>;
 	fb1_height               = <0>;
@@ -1347,6 +1349,7 @@ pull up or pull down(default 0), driver level(default 1), data>
 	status = "disabled";
 };
 
+/*
 &gpadc {
 	channel_num = <1>;
 	channel_select = <0x01>;
@@ -1371,7 +1374,7 @@ pull up or pull down(default 0), driver level(default 1), data>
 	key4_val = <28>;
 	status = "disabled";
 	wakeup-source;
-};
+};*/
 
 &s_cir0 {
 	pinctrl-names = "default", "sleep";
