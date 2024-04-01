@@ -317,13 +317,19 @@
 	dev1_do_hpd              = <1>;
 
 	def_output_dev           = <0>;
-	/*
-	disp_rotation_used	     = <1>;
-	degree0			         = <1>;
-*/
-	fb0_format               = <0>;
+
+	/* 不旋转屏幕 */
 	fb0_width                = <800>;
 	fb0_height               = <1280>;
+	
+	/* 旋转屏幕
+	disp_rotation_used	     = <1>;
+	degree0			         = <0>;
+	fb0_width                = <1280>;
+	fb0_height               = <800>;
+	*/
+
+	fb0_format               = <0>;
 
 	fb1_format               = <0>;
 	fb1_width                = <0>;
