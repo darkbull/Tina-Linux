@@ -1268,7 +1268,7 @@ pull up or pull down(default 0), driver level(default 1), data>
 &lcd0 {
 	lcd_used            = <1>;
 
-	lcd_driver_name     = "jd9366ab_3";
+	lcd_driver_name     = "jd9366da";
 	lcd_backlight       = <50>;
 	lcd_if              = <4>;
 
@@ -1281,7 +1281,7 @@ pull up or pull down(default 0), driver level(default 1), data>
 	lcd_pwm_used        = <1>;
 	lcd_pwm_ch          = <7>;
 	lcd_pwm_freq        = <50000>;
-	lcd_pwm_pol         = <1>;
+	lcd_pwm_pol         = <0>;
 	lcd_pwm_max_limit   = <255>;
 
 	lcd_hbp             = <40>;
