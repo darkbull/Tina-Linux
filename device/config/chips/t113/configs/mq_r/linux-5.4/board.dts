@@ -1276,12 +1276,12 @@ pull up or pull down(default 0), driver level(default 1), data>
 	lcd_y               = <1280>;
 	lcd_width           = <133>;
 	lcd_height          = <216>;
-	lcd_dclk_freq       = <68>;
+	lcd_dclk_freq       = <77>;
 
 	lcd_pwm_used        = <1>;
 	lcd_pwm_ch          = <7>;
 	lcd_pwm_freq        = <50000>;
-	lcd_pwm_pol         = <1>;
+	lcd_pwm_pol         = <0>;
 	lcd_pwm_max_limit   = <255>;
 
 	lcd_hbp             = <40>;
